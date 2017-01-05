@@ -1,11 +1,9 @@
-def fb(max)
-  fb_dict = {
-    2 => "bang",
-    3 => "fizz",
-    5 => "buzz",
-    7 => "boom"
-  }
-  
+def fb(max, fb_dict = {
+         2 => "bang",
+         3 => "fizz",
+         5 => "buzz",
+         7 => "boom"
+       })
   (1..max).each do |num|
     to_print = ""
 
@@ -17,4 +15,7 @@ def fb(max)
   end
 end
 
+
+
 fb(21)
+fb(21, { 3 => "foot", 7 => "bloot" })
