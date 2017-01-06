@@ -24,10 +24,9 @@
      (/ 1 (power base (abs exponent))))
     ((= exponent 0) 1)
     ((evenp exponent)
-     (setf to-the-n/2 (power base (/ exponent 2)))
-     (* to-the-n/2 to-the-n/2))
-    ((oddp exponent) ;this case could also just be t but I prefer it more explicit
-     (* base (power base (decf exponent))))))
+     (let ((to-the-n/2 (power base (/ exponent 2))))
+       (* to-the-n/2 to-the-n/2)))
+    (t (* base (power base (decf exponent))))))
 
 
 ;; 3. number of atoms in an expression
