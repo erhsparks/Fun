@@ -24,9 +24,8 @@
      (/ 1 (power base (abs exponent))))
     ((= exponent 0) 1)
     ((evenp exponent)
-     (progn
-       (setf to-the-n/2 (power base (/ exponent 2)))
-       (* to-the-n/2 to-the-n/2)))
+     (setf to-the-n/2 (power base (/ exponent 2)))
+     (* to-the-n/2 to-the-n/2))
     ((oddp exponent) ;this case could also just be t but I prefer it more explicit
      (* base (power base (decf exponent))))))
 
